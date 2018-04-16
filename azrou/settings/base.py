@@ -31,8 +31,6 @@ DJANGO_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'imagekit',
-
 ]
 
 LOCAL_APPS = []
