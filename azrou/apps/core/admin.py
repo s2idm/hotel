@@ -19,7 +19,7 @@ class ImagesGallerieAdmin(admin.ModelAdmin):
 admin.site.register(ImagesGallerie, ImagesGallerieAdmin)
 
 class GallerieAdmin(admin.ModelAdmin):
-    list_display = ('titre','description')
+    list_display = ('titre','description', 'image')
 
 admin.site.register(Gallerie, GallerieAdmin)
 
