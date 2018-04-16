@@ -1,0 +1,129 @@
+#colorlib-footer {
+    background: #302939;
+    height : auto;
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.row.row-pb-md {
+    padding-bottom: 4em !important;
+    padding-top: 4em !important;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.row.row-pb-md p {
+
+    padding-bottom: 15px;
+}
+.row.row-pb-md h4 {
+
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: #fff;
+}
+
+
+
+.row.row-pb-md li a {
+
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+}
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+@media (min-width: 992px)
+.col-md-3 {
+    width: 25%;
+    text-align: center;
+}
+
+@media (min-width: 992px)
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+}
+@media (min-width: 992px)
+.col-md-push-1 {
+    left: 8.33333%;
+}
+
+@media (min-width: 992px)
+.col-md-3 {
+    width: 25%;
+}
+@media (min-width: 992px)
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+}
+
+.footer-container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 50px;
+    margin-bottom: -50px;
+
+}
+
+@media (min-width: 1200px)
+.footer-container {
+    width: 1170px;
+}
+
+@media (min-width: 992px)
+.footer-container {
+    width: 970px;
+}
+@media (min-width: 768px)
+.footer-container {
+    width: 750px;
+}
+
+
+/*footer links */
+.bottom {
+   padding-bottom: 20px;
+}
+.footer-links {
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    padding: 0;
+    margin: 0 0 10px 0;
+    list-style: none;
+    display: block;
+}
+
+footer-links li a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+}
+
+@media (min-width: 992px)
+.col-md-push-1 {
+    left: 8.33333%;
+}
+
+@media (min-width: 992px)
+.col-md-3 {
+    width: 25%;
+}
+@media (min-width: 992px)
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+}
+
+@media (min-width: 992px)
+.col-md-12 {
+    width: 100%;
+}
+
+@media (min-width: 992px)
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+}

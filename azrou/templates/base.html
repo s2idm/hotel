@@ -1,16 +1,110 @@
+{% load static %}
+
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %} Adtile Fixed Nav {% endblock %}</title>
     {% block head %}
+    <meta charset="utf-8">
+    <!-- Required meta tags -->
+    <meta name="hotel" content="azrou">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" rel="stylesheet">
+	<link href="{% static 'css/box-styles.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/search-wrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <link rel="stylesheet" href="{% static 'css/ie.css' %}">
+    <script src="{% static 'js/responsive-nav.js' %}"></script>
+    <![endif]-->
     {% endblock %}
+	<body>
+
 </head>
-<body>
+	<header class="clearfix">
 
-<div id="container">
-    {% block content %}
-    {% endblock %}
-</div>
+    <div class="container">
+		<div class="row">
+			<div class="header-left">
+                      <h1 href="#home"  data-scroll>dar bensmim</h1>
+			</div>
+			<div class="header-right">
+				<label for="open">
+					<span class="hidden-desktop"></span>
+				</label>
+				<input type="checkbox" name="" id="open">
+                <nav>
+					<a href="#">Home</a>
+					<a href="#about">Inspiration</a>
+					<a href="#projects">Articles</a>
+					<a href="#">Works</a>
+					<a href="#">Contact</a>
+				</nav>
+			</div>
+			</div>
+		</div>
+	</header>
+{% block content %}
 
+
+
+{% endblock %}
+
+		<footer id="colorlib-footer" role="contentinfo">
+
+			<div class="footer-container">
+				<div class="row row-pb-md">
+					<div class="col-md-4">
+						<h4>Quick Links</h4>
+						<ul class="footer-links">
+								<li><a href="#">Facebook</a></li>
+								<li><a href="#">Instagram</a></li>
+								<li><a href="#">Booking</a></li>
+								<li><a href="#">TripAdvisor</a></li>
+							</ul>
+					</div>
+					<div class="col-md-4">
+						<h4>Recents Blog Post</h4>
+						<ul class="footer-links">
+								<li>Découvrez la region de bensmim, ifrane, azrou.</li>
+								<li><a href="#">Accomodation</a></li>
+								<li><a href="#">Dining &amp; Bar</a></li>
+								<li><a href="#">Restaurants</a></li>
+								<li><a href="#">Beach &amp; Resorts</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 col-md-push-1">
+						<h4>Contact Information</h4>
+						<ul class="footer-links">
+							<li>291 South 21th Street, <br> Suite 721 New York NY 10016</li>
+							<li><a href="tel://1234567920">+ 1235 2355 98</a></li>
+							<li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
+							<li><a href="http://luxehotel.com">luxehotel.com</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row bottom">
+					<div class="col-md-12 text-center">
+						<p>
+							<small class="block">
+							Copyright ©<script>document.write(new Date().getFullYear());</script>2018 All rights reserved <i class="icon-heart3" aria-hidden="true"></i> </small>
+						</p>
+					</div>
+				</div>
+				</div>
+			</div>
+		</footer>
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
 </body>
+
 </html>

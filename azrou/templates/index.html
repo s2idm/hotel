@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}{% load staticfiles %}
+{% block title %}Home Page{% endblock %}
+
+{% block description %}This page is an awesome home page.{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang='en'>
+  <body style="background-image:url(/static/images/intersection.png)">
+    <!-- Page Content -->
+    <div id="gallery" class="gallerie">
+
+      <h1 class="my-4 text-center text-lg-left">Thumbnail Gallery </h1>
+        <div class="row text-center text-lg-left">
+          {% for element in images %}
+                <div class="col-lg-3 col-md-4 col-xs-6">
+                    <a class="d-block mb-4 h-100">
+                    <img id="myImg{{element.id}}" onclick="imageClicked(this.id, '{{element.image.url}}', '{{element.titre}}')" class="img-fluid img-thumbnail" src="{{element.image_thumbnail.url}}" alt="{{element.titre}}" >
+                    </a>
+                </div>
+          {% endfor %}
+        </div>
+        <div id="myModal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="img01">
+          <div id="caption"></div>
+        </div>
+    </div>
+    <!-- /.container -->
+
+    <script src="{% static 'js/popup.js' %}"></script>
+
+  </body>
+
+</html>
+{% endblock %}

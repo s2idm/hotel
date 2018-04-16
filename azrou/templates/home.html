@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+{% load static %}{% load staticfiles %}
+{% block title %}Home Page{% endblock %}
+
+{% block description %}This page is an awesome home page.{% endblock %}
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang='en'>
+  <body>
+    <section id="home" class="caroussel">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              {% for carous in carousel %}
+              {% if forloop.first %}
+
+              <div class="item active">
+                <img src="{{carous.image.url}}" alt="{{carous.titre}} {{carous.sousTitre}}" >
+                    <div class="main-text">
+                        <div class="col-md-12 text-center">
+                            <h1>{{carous.titre}}</h1>
+                            <h2>{{carous.sousTitre}}</h2>
+                        </div>
+                    </div>
+              </div>
+              {% else %}
+               <div class="item">
+                <img src="{{carous.image.url}}" alt="{{carous.titre}} {{carous.sousTitre}}" >
+                    <div class="main-text">
+                        <div class="col-md-12 text-center">
+                            <h1>{{carous.titre}}</h1>
+                            <h2>{{carous.sousTitre}}</h2>
+                        </div>
+                    </div>
+               </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        <div id="colorlib-reservation">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 search-wrap">
+						<form method="post" class="colorlib-form">
+		              	<div class="row">
+		                <div class="col-md-3">
+		                  <div class="form-group">
+		                    <label for="date">Check-in:</label>
+		                    <div class="form-field">
+		                      <i class="icon icon-calendar2"></i>
+		                      <input type="text" id="date" class="form-control date" placeholder="Check-in date">
+		                    </div>
+		                  </div>
+		                </div>
+		                <div class="col-md-3">
+		                  <div class="form-group">
+		                    <label for="date">Check-out:</label>
+		                    <div class="form-field">
+		                      <i class="icon icon-calendar2"></i>
+		                      <input type="text" id="date" class="form-control date" placeholder="Check-out date">
+		                    </div>
+		                  </div>
+		                </div>
+		                <div class="col-md-2">
+		                  <div class="form-group">
+		                    <label for="adults">Adults</label>
+		                    <div class="form-field">
+		                      <i class="icon icon-arrow-down3"></i>
+		                      <select name="people" id="people" class="form-control">
+		                        <option value="#">1</option>
+		                        <option value="#">2</option>
+		                        <option value="#">3</option>
+		                        <option value="#">4</option>
+		                        <option value="#">5+</option>
+		                      </select>
+		                    </div>
+		                  </div>
+		                </div>
+		                <div class="col-md-2">
+		                  <div class="form-group">
+		                    <label for="children">Children</label>
+		                    <div class="form-field">
+		                      <i class="icon icon-arrow-down3"></i>
+		                      <select name="people" id="people" class="form-control">
+		                        <option value="#">1</option>
+		                        <option value="#">2</option>
+		                        <option value="#">3</option>
+		                        <option value="#">4</option>
+		                        <option value="#">5+</option>
+		                      </select>
+		                    </div>
+		                  </div>
+		                </div>
+		                <div class="col-md-2">
+		                  <input type="submit" name="submit" id="submit" value="Search" class="btn btn-primary btn-block">
+		                </div>
+		              </div>
+		            </form>
+					</div>
+				</div>
+			</div>
+		</div>
+    </section>
+
+
+    <section id="about">
+        <div class="row projects">
+          <div class="col-md-6 col-md-offset-3 text-center ">
+              <span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
+              <h2>Maison &amp; Vacances</h2>
+              <p>We love to tell our successful far far away, behind the word mountains, there live the blind texts.</p>
+          </div>
+        </div>
+        <div class="about">
+            <div class="text_static">
+
+                <p></p><p>L'histoire du groupe Mahindra &amp; Mahindra est étroitement liée au destin et au développement économique de l'Inde, pays d’origine de la marque.</p>
+
+            <p>La marque Mahindra est née en 1945, soit la même année où fut proclamée l’indépendance de la République de l'Inde.</p>
+
+            <p>L'aventure a commencé lorsque Monsieur KC Mahindra s’est rendu aux États-Unis. Il y a rencontré Barney Roos, l'inventeur de la légendaire Jeep. C’est alors que KC Mahindra a eu l’idée de monter en Inde un véhicule qui avait déjà su prouver toute sa force sur les champs de batailles lors de la Seconde Guerre Mondiale et qui saura se montrer tout aussi efficace sur le sol indien. Ainsi, Mahindra est créée.</p>
+
+            <p>Le 2 octobre 1945, l'entreprise commence à assembler la Jeep Willys en territoire indien et sous licence. Depuis lors, Mahindra &amp; Mahindra connaîtra un développement exponentiel. Elle deviendra un Groupe très influent en Inde qui occupe une position importante dans les secteurs clés de l'économie indienne puisqu’il élargira ses intérêts à la production de tracteurs agricoles et de véhicules utilitaires légers.</p>
+
+            <p>Au Maroc, Mahindra est distribuée depuis 2013 par Auto Nejma, l’importateur exclusif de la marque.</p>
+            <p></p>
+            </div><!-- text_static -->
+    </section>
+
+    <section id="projects" class="description" >
+        <div class="row projects">
+          <div class="col-md-6 col-md-offset-3 text-center ">
+              <span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
+              <h2>Rooms &amp; Suites</h2>
+              <p>We love to tell our successful far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          </div>
+        </div>
+      <div class="cards">
+
+      {% for element in galleries %}
+        <div class="card" >
+            <img class="card-img-top" src="{{element.image_thumbnail.url}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{element.titre}}</h5>
+              <p class="card-text"> {{element.description}}Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="{% url 'galleriename' element.id  %}" class="btncolor">Voir La gallerie</a>
+            </div>
+         </div>
+      {% endfor %}
+
+
+
+
+
+
+        </div>
+    </section>
+
+    <section id="blog">
+      <h1>Blog</h1>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{% static 'js/fastclick.js' %}"></script>
+    <script src="{% static 'js/scroll.js' %}"></script>
+    <script src="{% static 'js/fixed-responsive-nav.js' %}"></script>
+
+
+  </body>
+</html>
+
+{% endblock %}
