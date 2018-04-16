@@ -12,7 +12,7 @@ admin.site.register(CarouselElement, CarouselAdmin)
 
 
 class ImagesGallerieAdmin(admin.ModelAdmin):
-    list_display = ('gallerie', 'titre','image', 'ordre', 'afficher')
+    list_display = ('gallerie', 'titre', 'image', 'ordre', 'afficher')
     list_editable =('ordre', 'afficher')
 
 
