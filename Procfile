@@ -1,1 +1,1 @@
-web: gunicorn trapez.wsgi
+web: gunicorn azrou.wsgi
