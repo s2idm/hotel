@@ -75,22 +75,22 @@ WSGI_APPLICATION = 'azrou.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'azrou',
-#        'USER': 'postgres',
-#        'PASSWORD': 'postgres',
-#        'HOST': 'localhost',
-#        'PORT': '5432',
-#    },
-#}
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd4nm4nprml21rg',
+        'USER': 'iiynkdqbvhpjll',
+        'PASSWORD': '97ce0c517c16826d2dbe7b8b7a2838535c1ab53c8cb57ec289071375e79ca4b6',
+        'HOST': 'ec2-54-204-21-226.compute-1.amazonaws.com',
+        'PORT': '5432',
+    },
 }
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
