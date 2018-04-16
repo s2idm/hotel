@@ -3,8 +3,6 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 # Create your models here.
 
-from imagekit.models import ImageSpecField
-from imagekit.processors import ResizeToFill
 
 class CarouselElement(models.Model):
     POSITION_HELP_TEXT = _("The position of the element in the sequence or "
@@ -24,11 +22,6 @@ class CarouselElement(models.Model):
 class Gallerie(models.Model):
     titre = models.CharField(_('Titre'), max_length=155)
     description = models.TextField(_('Description'))
-    image = models.ImageField(_('image'), upload_to='gallerie_uploads')
-    image_thumbnail = ImageSpecField(source='image',
-                                     processors=[ResizeToFill(400, 300)],
-                                     format='JPEG',
-                                     options={'quality': 60})
 
     def __str__(self):
         return "%s" % self.titre
@@ -41,10 +34,7 @@ class ImagesGallerie(models.Model):
     gallerie = models.ForeignKey(Gallerie, on_delete=models.CASCADE)
     titre = models.CharField(_('Titre'), max_length=155)
     image = models.ImageField(_('image'), upload_to='carousel_uploads')
-    image_thumbnail = ImageSpecField(source='image',
-                                      processors=[ResizeToFill(400, 300)],
-                                      format='JPEG',
-                                      options={'quality': 60})
+
     ordre = models.IntegerField(_('Ordre'))
     afficher = models.BooleanField(_('Afficher'))
 
