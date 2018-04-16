@@ -1,12 +1,12 @@
 from .base import *
-
+from .database import *
 import os
 import dj_database_url
 
 
 ALLOWED_HOSTS = ['*']
 
-DEBUG = False
+DEBUG = True
 
 MIDDLEWARE += [
     'whitenoise.middleware.WhiteNoiseMiddleware'
