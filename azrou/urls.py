@@ -11,6 +11,9 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^gallerie/(?P<id>\d+)$', GallerieView.as_view(), name='galleriename'),
+    url(r"^blog/", include("pinax.blog.urls", namespace="pinax_blog")),
+    url(r"^ajax/images/", include("pinax.images.urls", namespace="pinax_images")),
+
 ]
 
 

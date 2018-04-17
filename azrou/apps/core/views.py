@@ -27,3 +27,4 @@ class GallerieView(TemplateView):
             'images': ImagesGallerie.objects.filter(gallerie__pk=id).filter(afficher=1),
         }
         return self.render_to_response(context)
+

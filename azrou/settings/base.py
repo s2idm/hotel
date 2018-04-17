@@ -26,6 +26,7 @@ ALLOWED_HOSTS = []
 DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -33,8 +34,15 @@ DJANGO_APPS = [
     'core',
     'imagekit',
 ]
+SITE_ID = 1
+SITE_DOMAIN ='127.0.0.1:8000'
 
-LOCAL_APPS = []
+LOCAL_APPS = [
+    'pinax.blog',
+    'pinax.images',
+    "bootstrapform",
+
+]
 
 THIRD_PARTY_APPS = [
     'compressor'
@@ -57,7 +65,7 @@ ROOT_URLCONF = 'azrou.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [join(project_root, 'templates')],
+        'DIRS': [join(project_root, 'templates'), 'pinax/blog'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,6 +73,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.contrib.messages.context_processors.messages',
+                "core.context_processors.admin_media",
+
             ],
         },
     },
