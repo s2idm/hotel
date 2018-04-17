@@ -17,7 +17,7 @@
           {% for element in images %}
                 <div class="col-lg-3 col-md-4 col-xs-6">
                     <a class="d-block mb-4 h-100">
-                    <img id="myImg{{element.id}}" onclick="imageClicked(this.id, '{{element.image.url}}', '{{element.titre}}')" class="img-fluid img-thumbnail" src="{{element.image_thumbnail.url}}" alt="{{element.titre}}" >
+                    <img id="myImg{{element.id}}" onclick="imageClicked(this.id, '{{element.image_thumbnail.url}}', '{{element.titre}}')" class="img-fluid img-thumbnail" src="{{element.image_thumbnail.url}}" alt="{{element.titre}}" >
                     </a>
                 </div>
           {% endfor %}

@@ -17,7 +17,7 @@ class HomeView(TemplateView):
         return self.render_to_response(context)
 
 class GallerieView(TemplateView):
-    template_name = 'index.html'
+    template_name = 'gallerie.html'
     #print (ImagesGallerie.objects.all())
     def get(self, request, *args, **kwargs):
         id = self.kwargs['id']
