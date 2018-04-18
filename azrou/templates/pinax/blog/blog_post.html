@@ -48,7 +48,7 @@
 
             <script>
                 console.log("{{ post.image_set.image_data|safe }}");
-                $.get("http://{{ SITE_DOMAIN }}/ajax/images/sets/{{ post.image_set.pk }}", function(data){
+                $.get("{{ SITE_DOMAIN }}/ajax/images/sets/{{ post.image_set.pk }}", function(data){
                     response =JSON.stringify(data);
                     obj = JSON.parse(response);
                     console.log(obj)
@@ -56,14 +56,14 @@
                     console.log(obj.images);
                     images = obj.images
                     console.log(obj.primaryImage.medium_thumbnail)
-                    console.log('http://{{ SITE_DOMAIN }}'+obj.primaryImage.medium_thumbnail)
-                    document.getElementById("myImg").src = 'http://{{ SITE_DOMAIN }}'+obj.primaryImage.thumbnail;
-                    document.getElementById("myImg3").src = 'http://{{ SITE_DOMAIN }}'+obj.primaryImage.small_thumbnail;
+                    console.log('{{ SITE_DOMAIN }}'+obj.primaryImage.medium_thumbnail)
+                    document.getElementById("myImg").src = '{{ SITE_DOMAIN }}'+obj.primaryImage.thumbnail;
+                    document.getElementById("myImg3").src = '{{ SITE_DOMAIN }}'+obj.primaryImage.small_thumbnail;
 
                     for(var i = 0; i < images.length; i++) {
                         var obj = images[i];
                         console.log(obj.medium_thumbnail);
-                        document.getElementById("myImg2").src = 'http://{{ SITE_DOMAIN }}'+obj.medium_thumbnail;
+                        document.getElementById("myImg2").src = '{{ SITE_DOMAIN }}'+obj.medium_thumbnail;
                     }
                     });
             </script>

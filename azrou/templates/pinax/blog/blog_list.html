@@ -25,7 +25,7 @@
         </div>
         <script>
         {% for post in post_list %}
-            $.get("http://{{ SITE_DOMAIN }}/ajax/images/sets/"+"{{ post.image_set.pk }}", function(data){
+            $.get("{{ SITE_DOMAIN }}/ajax/images/sets/"+"{{ post.image_set.pk }}", function(data){
             response =JSON.stringify(data);
             obj = JSON.parse(response);
             images = obj.images;

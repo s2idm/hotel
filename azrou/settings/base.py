@@ -35,7 +35,7 @@ DJANGO_APPS = [
     'imagekit',
 ]
 SITE_ID = 1
-SITE_DOMAIN ='villabensmim.herokuapp.com'
+SITE_DOMAIN ='https://villabensmim.herokuapp.com'
 
 LOCAL_APPS = [
     'pinax.blog',
