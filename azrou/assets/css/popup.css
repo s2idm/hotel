@@ -133,14 +133,13 @@ header{
 
 .header-left h1 {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
-    text-decoration: none;
     font-weight: bold;
     line-height: 40px;
     color: #000;
     font-size: 24px;
     text-transform: uppercase;
     margin-bottom:0px;
-
+    text-decoration: none;
 }
 
 .header-left,
@@ -469,9 +468,8 @@ nav>a:hover{
     margin-right: 150px;
     padding: 80px 0 0;
     margin-top: 56.48px;
-
+    min-height: 500px;
     text-align: justify;
-    text-color: black;
 
 }
 #blog a{
@@ -528,3 +526,19 @@ nav>a:hover{
 	}
 	}
 
+
+.square {
+  position: relative;
+  width: 50%;
+}
+
+.square:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+}

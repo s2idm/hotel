@@ -217,8 +217,6 @@ ul, menu, dir {
 .description {
     background: #fafafa;
     display:inline-block;
-    padding-top: 30px;
-
 }
 
 .description .col {
@@ -235,7 +233,7 @@ ul, menu, dir {
     padding-top: 150px;
     margin-right: 150px;
     margin-left: 150px;
-    min-height: 650px;
+    min-height: 600px;
 }
 
 
@@ -283,8 +281,7 @@ ul, menu, dir {
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
+
     box-shadow: 0 1px 1px 0 rgba(0,0,0,0.16), 0 0 0 0px rgba(0,0,0,0.08);
 }
 
@@ -352,7 +349,7 @@ ul, menu, dir {
 .cards {
     display: flex;
     flex-wrap: wrap;
-    padding-top: 10px;
+    padding-top: 30px;
     padding-right: 30px;
     padding-bottom: 30px;
     padding-left: 30px;
@@ -380,7 +377,7 @@ ul, menu, dir {
     margin-bottom: 20px;
     font-size: 14px;
     text-align: justify;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-left: auto;
 
 }
@@ -516,3 +513,33 @@ ul, menu, dir {
 }
 }
 
+
+.notif {
+    text-align: center;
+    color: white;
+    padding: 19px 0px;
+    background-color: green;
+}
+
+#notif {
+    display: none;
+    text-align: center;
+    color: white;
+    background-color: green;
+}
+
+
+#map {
+        height: 400px;
+        width: 100%;
+       }
+
+
+#mapsection h1{
+        padding-top: 120px;
+        padding-bottom: 22px;
+        text-align: center;
+        }
+#mapsection {
+        background-color: #fafafa;
+        }

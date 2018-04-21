@@ -1,6 +1,6 @@
 {% extends 'site_base.html' %}
 {% load static %}{% load staticfiles %}
-{% block title %}Home Page{% endblock %}
+{% block title %}Dar Bensmim {% endblock %}
 
 {% block description %}This page is an awesome home page.{% endblock %}
 
@@ -56,32 +56,36 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
+
         <div id="colorlib-reservation">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 search-wrap">
-						<form method="post" class="colorlib-form">
+						<form action="/create_post/" method="POST" id="post-form" class="colorlib-form">
+                        {% csrf_token %}
 		              	<div class="row">
-                        <div class='col-sm-3'>
-                            <div class="form-group">
-                                <label for="date">DATE DE DÉPART:</label>
-                                <div class='input-group date' id='datetimepicker4'>
-                                    <input type='text' class="form-control" />
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+
                         <div class='col-sm-3'>
                             <div class="form-group">
                                 <label for="date">DATE D'ARRIVER:</label>
                                 <div class='input-group date' id='datetimepicker5'>
-                                    <input type='text' class="form-control" />
+                                    <input type='text' id="date_depart" required="True" class="form-control" />
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                                     </span>
                                 </div>
                             </div>
                         </div>
+                        <div class='col-sm-3'>
+                            <div class="form-group">
+                                <label for="date">DATE DE DÉPART:</label>
+                                <div class='input-group date' id='datetimepicker4'>
+                                    <input type='text' id="date_arriver" required="True" class="form-control" />
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
                         <script type="text/javascript">
                             $(function() {
                                // Bootstrap DateTimePicker v4
@@ -102,7 +106,7 @@
 		                    <label for="date">Nom</label>
 		                    <div class="form-field">
 		                      <i class="icon icon-calendar2"></i>
-		                      <input type="text" id="date" class="form-control date" placeholder="Votre nom">
+		                      <input type="text" id="nom" required="True" class="form-control date" placeholder="Votre nom">
 		                    </div>
 		                  </div>
 		                </div>
@@ -112,7 +116,7 @@
 		                    <label for="date">Téléphone:</label>
 		                    <div class="form-field">
 		                      <i class="icon icon-calendar2"></i>
-		                      <input type="text" id="date" class="form-control date" placeholder="+33 06 26 69 82 43">
+		                      <input type="text" id="telephone" required="True" class="form-control date" placeholder="+33 06 26 69 82 43">
 		                    </div>
 		                  </div>
 		                </div>
@@ -121,17 +125,18 @@
 		                    <label for="date">E-mail:</label>
 		                    <div class="form-field">
 		                      <i class="icon icon-calendar2"></i>
-		                      <input type="text" id="date" class="form-control date" placeholder="votre.email@...">
+		                      <input type="text" id="email"  required="True" class="form-control" placeholder="votre.email@...">
 		                    </div>
 		                  </div>
 		                </div>
+      <div class="g-recaptcha" data-sitekey="your_site_key"></div>
 
                         <div class="col-md-2">
                             <div class="form-group">
                                 <label for="adults">Moyen de contact:</label>
                                     <div class="form-field">
                                         <i class="icon icon-arrow-down3"></i>
-                                        <select name="people" id="people" class="form-control">
+                                        <select name="people" id="moyen" class="form-control">
                                         <option value="#">Preféré</option>
                                         <option value="#">Téléphone</option>
                                         <option value="#">E-mail</option>
@@ -145,7 +150,7 @@
 		                    <label for="date">Message</label>
 		                    <div class="form-field">
 		                      <i class="icon icon-calendar2"></i>
-		                      <input type="text" id="date" class="form-control date" placeholder="message">
+		                      <input type="text" id="message" class="form-control" placeholder="message">
 		                    </div>
 		                  </div>
 		                </div>
@@ -154,12 +159,12 @@
 		                    <label for="adults">Adultes</label>
 		                    <div class="form-field">
 		                      <i class="icon icon-arrow-down3"></i>
-		                      <select name="people" id="people" class="form-control">
-		                        <option value="#">1</option>
-		                        <option value="#">2</option>
-		                        <option value="#">3</option>
-		                        <option value="#">4</option>
-		                        <option value="#">5+</option>
+		                      <select name="people" id="adultes"  class="form-control">
+		                        <option value="1">1</option>
+		                        <option value="2">2</option>
+		                        <option value="3">3</option>
+		                        <option value="4">4</option>
+		                        <option value="5">5+</option>
 		                      </select>
 		                    </div>
 		                  </div>
@@ -169,12 +174,12 @@
 		                    <label for="children">Enfants</label>
 		                    <div class="form-field">
 		                      <i class="icon icon-arrow-down3"></i>
-		                      <select name="people" id="people" class="form-control">
-		                        <option value="#">1</option>
-		                        <option value="#">2</option>
-		                        <option value="#">3</option>
-		                        <option value="#">4</option>
-		                        <option value="#">5+</option>
+		                      <select name="people" id="enfants"  required="True" class="form-control">
+		                        <option value="1">1</option>
+		                        <option value="2">2</option>
+		                        <option value="3">3</option>
+		                        <option value="4">4</option>
+		                        <option value="5">5+</option>
 		                      </select>
 		                    </div>
 		                  </div>
@@ -191,12 +196,12 @@
 		</div>
     </section>
 
-
+    <a id = "aboutsection" type='hidden' ></a>
     <section id="about">
         <div class="row projects">
           <div class="col-md-6 col-md-offset-3 text-center ">
               <span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
-              <h2>Maison &amp; Vacances</h2>
+              <h2>Maison de Vacances</h2>
               <p>We love to tell our successful far far away, behind the word mountains, there live the blind texts.</p>
           </div>
         </div>
@@ -220,7 +225,7 @@
         <div class="row projects">
           <div class="col-md-6 col-md-offset-3 text-center ">
               <span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
-              <h2>Rooms &amp; Suites</h2>
+              <h2>Chambres &amp Espaces</h2>
               <p>We love to tell our successful far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
           </div>
         </div>
@@ -247,14 +252,37 @@
 
     <section id="blo" style="height:400px;">
       <h1>Découvrez la region du moyen atlas.</h1>
+
       <a href="/blog" ><h3>Blog</h3></a>
     </section>
+    <div id="mapsection" style="height:600px;">
+
+          <h1>Localisation.</h1>
+
+    <div id="map" >
+        <script>
+          function initMap() {
+            var uluru = {lat: 33.493710, lng: -5.199581};
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 7,
+              center: uluru
+            });
+            var marker = new google.maps.Marker({
+              position: uluru,
+              map: map
+            });
+          }
+        </script>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxLITARD9CXCSw0Rg4TBnrWfkynTcSC-g&callback=initMap">
+        </script>
+    </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="{% static 'js/fastclick.js' %}"></script>
-    <script src="{% static 'js/scroll.js' %}"></script>
-    <script src="{% static 'js/fixed-responsive-nav.js' %}"></script>
+    <script src="{% static 'js/contactforms.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>

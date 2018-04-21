@@ -3,8 +3,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 
-from core.views import HomeView
-from core.views import GallerieView
+from core.views import HomeView, GallerieView, create_post
 
 
 urlpatterns = [
@@ -13,6 +12,7 @@ urlpatterns = [
     url(r'^gallerie/(?P<id>\d+)$', GallerieView.as_view(), name='galleriename'),
     url(r"^blog/", include("pinax.blog.urls", namespace="pinax_blog")),
     url(r"^ajax/images/", include("pinax.images.urls", namespace="pinax_images")),
+    url(r"^create_post/", create_post, name='create_post'),
 
 ]
 

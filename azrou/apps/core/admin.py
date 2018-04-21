@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from core.models import CarouselElement, ImagesGallerie, Gallerie
+from core.models import CarouselElement, ImagesGallerie, Gallerie, Contact
 
 class CarouselAdmin(admin.ModelAdmin):
     list_display = ('titre','sousTitre','ordre', 'afficher')
@@ -24,5 +24,7 @@ class GallerieAdmin(admin.ModelAdmin):
 admin.site.register(Gallerie, GallerieAdmin)
 
 
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('nom', 'telephone','email', 'date_arriver', 'date_depart', 'adultes', 'enfants', 'message')
 
-
+admin.site.register(Contact, ContactAdmin)

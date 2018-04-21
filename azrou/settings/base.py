@@ -35,7 +35,7 @@ DJANGO_APPS = [
     'imagekit',
 ]
 SITE_ID = 1
-SITE_DOMAIN ='https://villabensmim.herokuapp.com'
+SITE_DOMAIN ='http://127.0.0.1:8000'
 
 LOCAL_APPS = [
     'pinax.blog',
@@ -97,16 +97,25 @@ WSGI_APPLICATION = 'azrou.wsgi.application'
 #        'PORT': '5432',
 #    },
 #}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'd5fbfdbf3lueip',
+#        'USER': 'crnzofygxzpgpj',
+#        'PASSWORD': '8e5ed8c2fb55ed749f0a9a9ef1bd32869ba4c68413789b56efd7afe20e9443b7',
+#        'HOST': 'ec2-54-235-193-34.compute-1.amazonaws.com',
+#        'PORT': '5432',
+#    },
+#}
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd5fbfdbf3lueip',
-        'USER': 'crnzofygxzpgpj',
-        'PASSWORD': '8e5ed8c2fb55ed749f0a9a9ef1bd32869ba4c68413789b56efd7afe20e9443b7',
-        'HOST': 'ec2-54-235-193-34.compute-1.amazonaws.com',
-        'PORT': '5432',
-    },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

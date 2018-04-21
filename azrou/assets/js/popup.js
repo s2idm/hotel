@@ -59,7 +59,13 @@ function imageClicked(id,image_url, image_title) {
     span.onclick = function() {
         modal.style.display = "none";
     }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
     return true;
 }
+
+
+var nav = responsiveNav(".nav-collapse");
 
 

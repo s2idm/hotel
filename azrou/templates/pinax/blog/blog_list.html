@@ -10,7 +10,7 @@
             {% for post in post_list %}
                 <div class="post">
                      <div id="post" class="row" >
-                    <h2><a href="{{ post.get_absolute_url }}">{{ post.title }} amine rachid</a></h2>
+                    <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
                     {% include "pinax/blog/dateline.html" %}
                     <div id ="teaser2" class="col-md-2 " >
                         <a href="{{ post.get_absolute_url }}"><img id="myImg{{ post.image_set.pk }}" class="blogimage" src=''></a>
@@ -37,7 +37,7 @@
         </script>
         {% include "pagination/_pagination.html" %}
     {% else %}
-        <p class="alert alert-info lead">No blog posts have been published.</p>
+        <p class="alert alert-info lead">Il n'y as pas encore de publication revenez plus tard.</p>
     {% endif %}
     </div>
 

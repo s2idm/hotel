@@ -23,6 +23,8 @@
         callback.call(scope, i, array[i]);
       }
     };
+    var nav = responsiveNav(".nav-collapse");
+
 
     // Attach FastClick to remove the 300ms tap delay
     FastClick.attach(document.body);
